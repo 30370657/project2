@@ -20,37 +20,53 @@
 
         </div>
         <div class="text">
-            CareerGro Australia
-            Plan for better future
-            Educational Consultant
+            CareerGro Australia <br>
+            Plan for better future <br>
+            Educational Consultant <br>
+
+        </div>
+
+        <div class="navi">
+            <ul>
+                <li><a class ="active" href="index.php">Home</a></li>
+                <li><a href="about.php">About Us</a></li>
+                <li><a href="EA.php">Educational Agent</a></li>
+                <li><a href="AE.php">Australian Education</a></li>
+                <li><a href="contact.php">Contact Us</a></li>
+            </ul>
+        
+        
+        
+        
+        
+
+    </div>
+    </div>
+
+  
+    <div class="gallery">
+        
+        <div class="galleryImage">
+            <img class="bg" src="media/image/home/Melbourne.jpg" alt="Picture Missing">
+        </div>
+        <div class="galleryText">
+           We Do Things Differently!
+
+        </div>
+        <div class="galleryLink">
+            <a href="contact.php"> Get In Touch, Today!! </a> 
 
         </div>
     </div>
-
-    <div class="navi">
-        Navi
-
-    </div>
-    <div class="image">
-        Img
-
-    </div>
-    <div class="text">
-        text
-
-    </div>
-    <div class="secImg">
-        img
-
-    </div>
+   
     <div class="foot">
 
-        <div class="text">
-            text
+        <div class="Ftext">
+         
 
         </div>
-        <div class="img">
-            img
+        <div class="Fimg">
+            
 
         </div>
 
