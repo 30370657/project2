@@ -18,7 +18,7 @@
                 Educational Consultants
             </h4>
         </div>
-        <-- test Comment -->
+        <!- test Comment -->
         <nav>
             <a href="index.php">Home</a>
             <a href="about.php">About Us</a>
