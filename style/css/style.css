@@ -1,0 +1,115 @@
+*{
+   padding: 0;
+   margin: 0; 
+}
+body{
+    background-color: rgb(50, 179, 223);
+}
+header{
+    position: relative;
+    margin: 5px;
+}
+header img{
+    float: left;
+   
+    
+}
+.moto{
+   margin: 5px 5px;
+    
+}
+.moto h4{
+    margin-left: 15em;
+}
+nav{
+    margin-top: 3em;
+    width: 100%;
+    overflow: auto;
+    background-color: #555;
+}
+nav a{
+    float: left;
+    text-align: center;
+    padding: 12px 13px;
+    margin-bottom: 0px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 17px;
+}
+
+nav a:hover, .active{
+    background-color: rgb(125, 213, 37);
+}
+
+.main{
+    position: relative;
+}
+
+.main .gallery{
+    margin-left: 3%;
+    margin-right: 3%;
+    width: 94%;
+    height: 500px;
+    
+  
+}
+.main .text{
+    font-family: cursive;
+    color: white;
+    position: absolute;
+    bottom: 10%;
+    left: 40%;
+    font-size: 20px;
+    
+}
+.main .text a{
+    color: white;
+}
+
+
+
+
+
+footer .cr{
+    float: left;
+    justify-content: left;
+    
+}
+footer .address{
+    margin: auto;
+    width: 25%;
+    padding: auto;
+}
+footer .socialid{
+    float: right;
+    overflow: auto;
+}
+
+
+
+.login{
+    background-color: white;
+    font-size: 30px;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    border-style:none;
+    width: 300px;
+    border-radius: 20px;
+    text-align: center;
+    
+}
+
+.login input{
+    height: 30px;
+    border-radius: 5px;
+}
+.login .loginBtn{
+    height: 30px;
+    width: 100px;
+    margin: 15px;
+    background-color: rgb(36, 79, 75);
+    color: white;
+    
+}
