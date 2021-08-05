@@ -1,0 +1,10 @@
+import tkinter
+m = tkinter.Tk()
+m.title("Sangit")
+lbl_1 = tkinter.Label(text="Enter your name")
+name = tkinter.Entry()
+button = tkinter.Button(text="Display")
+lbl_1.pack()
+name.pack()
+button.pack()
+m.mainloop()

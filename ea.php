@@ -1,21 +1,10 @@
-<?php 
-session_start();
-include("management/config.php");
-include("management/function.php");
- 
-
-$userData = check_login($con);
-
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Educational Agents</title>
     <link rel="stylesheet" href="style/css/style.css">
 </head>
 <body>
@@ -30,20 +19,11 @@ $userData = check_login($con);
         </div>
 
         <nav>
-            <a class="active" href="index.php">Home</a>
+            <a href="index.php">Home</a>
             <a href="about.php">About Us</a>
             <a href="ae.php">Educational Agents</a>
-            <a href="ea.php">Australian Education</a>
+            <a class="active" href="ea.php">Australian Education</a>
             <a href="contact.php">Contact</a>
-            <?php 
-                if($userData){
-                    echo "<a href='management/housekeeping.php' style='float:right'>House Keeping </a>";
-                }
-                else{
-                    echo "<a href='login.php' style='float:right'>Sign In </a>";
-                }
-            
-            ?>
         </nav>
 
 

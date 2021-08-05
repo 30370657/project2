@@ -1,21 +1,10 @@
-<?php 
-session_start();
-include("management/config.php");
-include("management/function.php");
- 
-
-$userData = check_login($con);
-
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>About</title>
     <link rel="stylesheet" href="style/css/style.css">
 </head>
 <body>
@@ -30,20 +19,11 @@ $userData = check_login($con);
         </div>
 
         <nav>
-            <a class="active" href="index.php">Home</a>
-            <a href="about.php">About Us</a>
+            <a href="index.php">Home</a>
+            <a class="active" href="about.php">About Us</a>
             <a href="ae.php">Educational Agents</a>
             <a href="ea.php">Australian Education</a>
             <a href="contact.php">Contact</a>
-            <?php 
-                if($userData){
-                    echo "<a href='management/housekeeping.php' style='float:right'>House Keeping </a>";
-                }
-                else{
-                    echo "<a href='login.php' style='float:right'>Sign In </a>";
-                }
-            
-            ?>
         </nav>
 
 
@@ -51,7 +31,7 @@ $userData = check_login($con);
 
     <div class="main">
        
-        <img class="gallery" src="media/image/gallery/Melbourne.jpg" alt="">
+        <img class="gallery" src="media/image/gallery/Tasmania.jpg" alt="">
         <div class="text">
             We do things differently! <br>
             <a href="contact.php">Get in touch today</a>
