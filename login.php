@@ -69,7 +69,6 @@ include("management/function.php");
         }
         
     }
-//Demo Test for php comment
-/* Demo for git update */
+
 
 ?>
