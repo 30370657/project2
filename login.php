@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="style/css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 <body>
 
@@ -22,8 +23,8 @@
         <nav>
             <a href="index.php">Home</a>
             <a href="about.php">About Us</a>
-            <a href="ea.php">Educational Agents</a>
-            <a href="ae.php">Australian Education</a>
+            <a href="ae.php">Educational Agents</a>
+            <a href="ea.php">Australian Education</a>
             <a href="contact.php">Contact</a>
             <a class="active" href="login.php" style="float:right">Sign In </a>
         </nav>

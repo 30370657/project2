@@ -1,9 +1,3 @@
-<?php 
-    include ("./management/config.php");
-    include("api/get_ae.php");
-    $file = json_decode(ae($con));
-    
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Australian Education</title>
     <link rel="stylesheet" href="style/css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 <body>
     <header>
@@ -27,8 +22,8 @@
         <nav>
             <a href="index.php">Home</a>
             <a href="about.php">About Us</a>
-            <a href="ea.php">Educational Agents</a>
-            <a class="active" href="ae.php">Australian Education</a>
+            <a class="active" href="ae.php">Educational Agents</a>
+            <a href="ea.php">Australian Education</a>
             <a href="contact.php">Contact</a>
         </nav>
 
@@ -50,21 +45,46 @@
 
    </div>
 
-    <footer>
-        <div class="cr">
+   <footer class="footer">
+  	 <div class="container">
+  	 	<div class="row">
+  	 		<div class="footer-col">
+  	 			<h4>CarrerGro Australia</h4>
+  	 			<ul>
+                   <li><a href="index.php">home</a></li>
+  	 				<li><a href="about.php">about us</a></li>
+  	 				<li><a href="ea">educational agent</a></li>
+  	 				<li><a href="ae"> Australian education</a></li>
+  	 				<li><a href="contact"> contact</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		
+               <div class="footer-touch">
+  	 			<h4>Get in touch with us</h4>
+  	 			<ul>
+                   <li>Career Gro Australia</li>
+  	 				<li>1 Nicolas Street, Keysborough, VIC 3713, Australia.</li>
+  	 				<li>0431 531 697</li>
+  	 				<li> Australian education</li>
+  	 				<li>careergroaustralia@gmail.com</li>
+  	 			</ul>
+  	 		</div>
+
+  	 		<div class="footer-col">
+  	 			<h4>follow us</h4>
+  	 			<div class="social-links">
+  	 				<a href="#"><i class="fab fa-facebook-f"></i></a>
+  	 				<a href="#"><i class="fab fa-twitter"></i></a>
+  	 				<a href="#"><i class="fab fa-instagram"></i></a>
+  	 				<a href="#"><i class="fab fa-linkedin-in"></i></a>
+  	 			</div>
+  	 		</div>
+  	 	</div>
+           <div class="footer-copy">
             <a href="#">Copyright Info</a>
         </div>
-        <div class="address">
-            Nicholas Street, Keysborough, Victoria 3171 <br>
-            <a href="mailto:Careergroaustralia@gmail.com">Careergroaustralia@gmail.com</a> <br>
-            Office No. <a href="tel:+61 4315 316 97">+61 4315 316 97</a>
-        </div>
-        <div class="socialid">
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-            <a href="#">Twitter</a>
-        </div>
-    </footer>
+  	 
+  </footer>
         
 </body>
 </html>
