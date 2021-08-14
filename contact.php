@@ -43,6 +43,7 @@
 
 
 
+
     <div class= "contact">
     <div class="contact-content">
                 <h1>Contact Us</h1>
@@ -82,7 +83,6 @@
 </div>
 
 
-
 <div class ="ContactForm">
     <form>
         <h2>Message</h2>
@@ -106,8 +106,9 @@
             <input type="submit" name="" vlaue="send">
            
 </div>
-</form>
+
 </div>
+
 
 
 
