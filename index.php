@@ -55,7 +55,7 @@ $userData = check_login($con);
         <img class="gallery" src="media/image/gallery/Melbourne.jpg" alt="">
         <div class="text">
             We do things differently! <br>
-            <a href="contact.php">Get in touch today Test</a>
+            <a href="contact.php">Get in touch today</a>
         </div>
         
     </div>
