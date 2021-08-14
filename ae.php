@@ -45,6 +45,29 @@
 
    </div>
 
+   <div class="course_data"></div>
+
+   <div class="course_info">
+       <div class="course_img"></div>
+       <div class="course_text1">
+           <h2> Study Pathway- The Australian Qualification Framework </h2>
+           <p>
+           Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita similique ut, quod placeat at fuga corporis <br> libero, assumenda, totam dolor adipisci quidem esse non? Quos nisi id adipisci corporis?
+           </p>
+           
+       </div>
+       <div class="course_text2">
+           <h2> Important Terms Used In Australian Higher Education </h2>
+           <p>
+                ipsum dolor sit, amet consectetur adipisicing elit. Qui quasi deserunt molestias animi quaerat ullam, perspiciatis, exercitationem ab libero totam tenetur voluptatum placeat veritatis, possimus doloribus ratione rerum ipsam. Totam!
+            </p>
+       </div>
+
+        
+
+
+   </div>
+
    <footer class="footer">
   	 <div class="container">
   	 	<div class="row">
