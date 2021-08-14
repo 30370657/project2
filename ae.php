@@ -1,3 +1,9 @@
+<?php 
+    include ("./management/config.php");
+    include("api/get_ae.php");
+    $file = json_decode(ae($con));
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,8 +27,8 @@
         <nav>
             <a href="index.php">Home</a>
             <a href="about.php">About Us</a>
-            <a class="active" href="ae.php">Educational Agents</a>
-            <a href="ea.php">Australian Education</a>
+            <a href="ea.php">Educational Agents</a>
+            <a class="active" href="ae.php">Australian Education</a>
             <a href="contact.php">Contact</a>
         </nav>
 
