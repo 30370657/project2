@@ -22,8 +22,8 @@
         <nav>
             <a href="index.php">Home</a>
             <a href="about.php">About Us</a>
-            <a class="active" href="ae.php">Educational Agents</a>
-            <a href="ea.php">Australian Education</a>
+            <a class="active" href="ae.php">Australian Education</a>
+            <a href="ea.php">Educational Agent</a>
             <a href="contact.php">Contact</a>
         </nav>
 
