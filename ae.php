@@ -1,3 +1,10 @@
+<?php 
+    
+    $json_file = file_get_contents("data.json");
+    $json_data = json_decode($json_file, true);
+    
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +14,7 @@
     <title>Australian Education</title>
     <link rel="stylesheet" href="style/css/style.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    
 </head>
 <body>
     <header>
@@ -29,6 +37,7 @@
 
 
     </header>
+    
 
     <div class="main">
        
@@ -45,7 +54,20 @@
 
    </div>
 
-   <div class="course_data"></div>
+   <div class="course_data">
+        <table id="data_table">
+            <tr>
+                <th>Course</th>
+                <th>Desc</th>
+                <th>College Name</th>
+                <th>Code</th>
+                <th>Id</th>
+                <th>Price</th>
+
+            </tr>
+        </table>
+        
+   </div>
 
    <div class="course_info">
        <div class="course_img"></div>
@@ -110,4 +132,56 @@
   </footer>
         
 </body>
+<script>
+        
+    alert("HI"); 
+    var table = document.getElementById("data_table");
+        
+        
+       
+       <?php  
+            
+           foreach($json_data['college'] as $college){
+            
+           foreach ($college['Course'] as $key ) {
+               print"
+                var row = document.createElement('tr'); 
+                var course = document.createElement('td');
+                var desc = document.createElement('td');
+                var college = document.createElement('td');
+                var code = document.createElement('td');
+                var id = document.createElement('td');
+                var price = document.createElement('td');
+
+                course.innerHTML ='".$key['Name']."';
+                desc.innerHTML = '".$key['Desc']."';
+                college.innerHTML = '".$college['Name']."';
+                code.innerHTML = '".$key['Code']."';
+                id.innerHTML = '".$key['ID']."';
+                price.innerHTML = '".$college['College ID']."';
+
+                row.appendChild(course);
+                row.appendChild(desc);
+                row.appendChild(college);
+                row.appendChild(code);
+                row.appendChild(id);
+                row.appendChild(price);
+                table.appendChild(row);
+                
+
+
+               
+               
+               
+               ";
+               
+
+               
+            }
+        }
+        ?>
+        
+        
+        
+    </script>
 </html>
