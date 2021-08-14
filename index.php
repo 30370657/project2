@@ -33,8 +33,8 @@ $userData = check_login($con);
         <nav>
             <a class="active" href="index.php">Home</a>
             <a href="about.php">About Us</a>
-            <a href="ae.php">Educational Agents</a>
-            <a href="ea.php">Australian Education</a>
+            <a href="ae.php">Australian Education</a>
+            <a href="ea.php">Educational Agents</a>
             <a href="contact.php">Contact</a>
             <?php 
                 if($userData){
