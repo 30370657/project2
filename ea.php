@@ -24,7 +24,7 @@
             <a href="about.php">About Us</a>
             <a href="ae.php">Australian Education</a>
             <a class="active" href="ea.php">Educational Agent</a>
-            <a href="contact.php">Contact</a>
+            <a href="contact.php">Contact</a> <!test -> 
         </nav>
 
 
