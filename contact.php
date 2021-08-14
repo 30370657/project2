@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
     <link rel="stylesheet" href="style/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 <body>
@@ -42,9 +43,67 @@
 
 
 
-    <div class= "contact"></div>
-    <div class="contact-content"></div>
+    <div class= "contact">
+    <div class="contact-content">
                 <h1>Contact Us</h1>
+                <p></p>
+</div>
+
+<div class = "contact-container">
+    <div class = "contactInfo">
+        <div class="box">
+            <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+            <div class="text">
+            <h3>Address</h3>
+            <p>1 Nicolas Street, Keysborough, VIC 3713, Australia</p>
+
+        </div>
+         
+        <div class="box">
+            <div class="icon"><i class="fa fa-phone-square" aria-hidden="true"></i></div>
+            <div class="text">
+            <h3>Phone</h3>
+            <p>0431 531 697</p>
+
+        </div>
+
+        <div class="box">
+            <div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+            <div class="text">
+            <h3>Email</h3>
+            <p>Careergroaustralia@gmail.com</p>
+
+        </div>
+</div>
+<div class ="ContactForm">
+    <form>
+        <h2>Message</h2>
+
+        <div class ="inputBox">
+            <input type="text" name="" required="required">
+            <span>Full Name</span>
+</div>
+
+<div class ="inputBox">
+            <input type="text" name="" required="required">
+            <span>Email</span>
+</div>
+
+<div class ="inputBox">
+            <textarea required = "required"></textarea>
+            <span>Type your message</span>
+</div>
+
+<div class ="inputBox">
+            <input type="submit" name="" vlaue="send">
+           
+</div>
+</form>
+</div>
+
+</div>
+</div>
+
 
     <footer class="footer">
   	 <div class="container">
