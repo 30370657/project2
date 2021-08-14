@@ -38,12 +38,13 @@
             <a href="contact.php">Get in touch today</a>
         </div>
         
-
-
-
-
-
     </div>
+
+
+
+    <div class= "contact"></div>
+    <div class="contact-content"></div>
+                <h1>Contact Us</h1>
 
     <footer class="footer">
   	 <div class="container">

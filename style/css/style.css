@@ -53,15 +53,26 @@ nav a:hover, .active{
     width: 94%;
     height: 500px;
     
+    
   
 }
+
 .main .text{
+    width: 100%;
     font-family: cursive;
     color: white;
     position: absolute;
-    bottom: 10%;
-    left: 40%;
+    bottom: 0;
+    width: 94%;
+    text-align: center;
     font-size: 20px;
+    background-image: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.8),
+          rgba(0, 0, 0, 0.8) 100%
+      );
+    margin-left: 3%;
+    padding-bottom: 5%
     
 }
 
