@@ -55,15 +55,16 @@
             <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
             <div class="text">
             <h3>Address</h3>
-            <p>1 Nicolas Street, Keysborough, VIC 3713, Australia</p>
-
+            <p>1 Nicolas Street, Keysborough,<br> VIC 3713, Australia</p>
+</div> 
         </div>
          
         <div class="box">
-            <div class="icon"><i class="fa fa-phone-square" aria-hidden="true"></i></div>
+            <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
             <div class="text">
             <h3>Phone</h3>
             <p>0431 531 697</p>
+</div>
 
         </div>
 
@@ -72,9 +73,16 @@
             <div class="text">
             <h3>Email</h3>
             <p>Careergroaustralia@gmail.com</p>
+</div>
 
         </div>
 </div>
+</div>
+</div>
+</div>
+
+
+
 <div class ="ContactForm">
     <form>
         <h2>Message</h2>
@@ -101,8 +109,6 @@
 </form>
 </div>
 
-</div>
-</div>
 
 
     <footer class="footer">
