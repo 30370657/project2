@@ -45,42 +45,42 @@
 
 
     <div class= "contact">
-    <div class="contact-content">
-                <h1>Contact Us</h1>
-                <p></p>
-</div>
-
-<div class = "contact-container">
-    <div class = "contactInfo">
-        <div class="box">
-            <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-            <div class="text">
-            <h3>Address</h3>
-            <p>1 Nicolas Street, Keysborough,<br> VIC 3713, Australia</p>
-</div> 
-        </div>
-         
-        <div class="box">
-            <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
-            <div class="text">
-            <h3>Phone</h3>
-            <p>0431 531 697</p>
-</div>
-
+        <div class="contact-content">
+            <h1>Contact Us</h1>
+            <p></p>
         </div>
 
-        <div class="box">
-            <div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
-            <div class="text">
-            <h3>Email</h3>
-            <p>Careergroaustralia@gmail.com</p>
-</div>
+        <div class = "contact-container">
+            <div class = "contactInfo">
+                <div class="box">
+                    <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Address</h3>
+                        <p>1 Nicolas Street, Keysborough,<br> VIC 3713, Australia</p>
+                    </div> 
+                </div>
+                
+                <div class="box">
+                    <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Phone</h3>
+                        <p>0431 531 697</p>
+                    </div>
 
+                </div>
+
+                <div class="box">
+                    <div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Email</h3>
+                        <p>Careergroaustralia@gmail.com</p>
+                    </div>
+
+                </div>
+            </div>
         </div>
-</div>
-</div>
-</div>
-</div>
+    </div>
+    
 
 
 <div class ="ContactForm">
@@ -90,67 +90,67 @@
         <div class ="inputBox">
             <input type="text" name="" required="required">
             <span>Full Name</span>
-</div>
+    </div>
 
-<div class ="inputBox">
-            <input type="text" name="" required="required">
-            <span>Email</span>
-</div>
+    <div class ="inputBox">
+                <input type="text" name="" required="required">
+                <span>Email</span>
+    </div>
 
-<div class ="inputBox">
-            <textarea required = "required"></textarea>
-            <span>Type your message</span>
-</div>
+    <div class ="inputBox">
+                <textarea required = "required"></textarea>
+                <span>Type your message</span>
+    </div>
 
-<div class ="inputBox">
-            <input type="submit" name="" vlaue="send">
-           
-</div>
+    <div class ="inputBox">
+                <input type="submit" name="" vlaue="send">
+            
+    </div>
 
-</div>
+    </div>
 
 
 
 
     <footer class="footer">
-  	 <div class="container">
-  	 	<div class="row">
-  	 		<div class="footer-col">
-  	 			<h4>CarrerGro Australia</h4>
-  	 			<ul>
-                   <li><a href="index.php">home</a></li>
-  	 				<li><a href="about.php">about us</a></li>
-  	 				<li><a href="ea">educational agent</a></li>
-  	 				<li><a href="ae"> Australian education</a></li>
-  	 				<li><a href="contact"> contact</a></li>
-  	 			</ul>
-  	 		</div>
-  	 		
-               <div class="footer-touch">
-  	 			<h4>Get in touch with us</h4>
-  	 			<ul>
-                   <li>Career Gro Australia</li>
-  	 				<li>1 Nicolas Street, Keysborough, VIC 3713, Australia.</li>
-  	 				<li>0431 531 697</li>
-  	 				<li> Australian education</li>
-  	 				<li>careergroaustralia@gmail.com</li>
-  	 			</ul>
-  	 		</div>
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>CarrerGro Australia</h4>
+                    <ul>
+                    <li><a href="index.php">home</a></li>
+                        <li><a href="about.php">about us</a></li>
+                        <li><a href="ea">educational agent</a></li>
+                        <li><a href="ae"> Australian education</a></li>
+                        <li><a href="contact"> contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-touch">
+                    <h4>Get in touch with us</h4>
+                    <ul>
+                    <li>Career Gro Australia</li>
+                        <li>1 Nicolas Street, Keysborough, VIC 3713, Australia.</li>
+                        <li>0431 531 697</li>
+                        <li> Australian education</li>
+                        <li>careergroaustralia@gmail.com</li>
+                    </ul>
+                </div>
 
-  	 		<div class="footer-col">
-  	 			<h4>follow us</h4>
-  	 			<div class="social-links">
-  	 				<a href="#"><i class="fab fa-facebook-f"></i></a>
-  	 				<a href="#"><i class="fab fa-twitter"></i></a>
-  	 				<a href="#"><i class="fab fa-instagram"></i></a>
-  	 				<a href="#"><i class="fab fa-linkedin-in"></i></a>
-  	 			</div>
-  	 		</div>
-  	 	</div>
-           <div class="footer-copy">
-            <a href="#">Copyright Info</a>
-        </div>
-  	 
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copy">
+                <a href="#">Copyright Info</a>
+            </div>
+        
   </footer>
         
 </body>
