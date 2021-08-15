@@ -106,6 +106,7 @@
                 <input type="submit" name="" vlaue="send">
             
     </div>
+    </form>
 
     </div>
 
