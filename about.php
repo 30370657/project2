@@ -55,6 +55,20 @@ An Australian qualification gives an edge to students providing more global care
     <a href = "">Read More</a>
 </div>
 </div>
+            <div class = "opening-hours">
+<h3> Our Opening Hours</h2>
+<br>
+		<table>
+		
+		<tr><th>Monday</th><td>9am - 5pm</td></tr>
+		<tr><th>Tuesday</th><td>9am - 5pm</td></tr>
+		<tr><th>Wednesday</th><td>9am - 5pm</td></tr>
+		<tr><th>Thursday</th><td>9am - 5pm</td></tr>
+		<tr><th>Friday</th><td>9am - 5pm</td></tr>
+		<tr><th>Saturday</th><td>Closed</td></tr>
+		<tr><th>Sunday</th><td>Closed</td></tr>
+		</table>
+		<br>
 </div> 
 
 
