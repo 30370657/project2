@@ -1,3 +1,20 @@
+<?php
+if(!empty($_POST["send"])) {
+	$name = $_POST["FullName"];
+	$email = $_POST["Email"];
+	$content = $_POST["message"];
+
+	$toEmail = "lokeshgurung889@gmail.com";
+	$mailHeaders = "From: " . $name . "<". $email .">\r\n";
+	if(mail($toEmail, $content, $mailHeaders)) {
+	    $message = "Your contact information is received successfully.";
+	    $type = "success";
+	}
+}
+require_once "contact.php";
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -84,26 +101,26 @@
 
 
 <div class ="ContactForm">
-    <form>
+    <form id="contactphp" method="post" action="contact.php">
         <h2>Message</h2>
 
         <div class ="inputBox">
-            <input type="text" name="" required="required">
+            <input type="text" name="FullName" required="required">
             <span>Full Name</span>
     </div>
 
     <div class ="inputBox">
-                <input type="text" name="" required="required">
+                <input type="text" name="Email" required="required">
                 <span>Email</span>
-    </div>
+    </div> 
 
     <div class ="inputBox">
-                <textarea required = "required"></textarea>
+                <textarea name ="Message" required = "required"></textarea>
                 <span>Type your message</span>
     </div>
 
     <div class ="inputBox">
-                <input type="submit" name="" vlaue="send">
+                <input type="submit" name="" value="send">
             
     </div>
     </form>
