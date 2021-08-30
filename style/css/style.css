@@ -241,40 +241,72 @@ ul {
 }
 
 /* css code for About Us page*/
-.content-selection{
-width: 80%;
-padding-left: 10%;
-
+.content-selection {
+  width: 88%; /*after deducting margin and padding and making section equal to top image */
+  background-color: #f0f2f5;
+  margin-left: 3%;
+  padding: 3%;
 }
-.content h1{
-margin-top: 20px;
-color:#24262b;
+.content-selection h1,
+h2 {
+  color: #24262b;
 }
-
-.about-content p{
-    margin-top: 10px;
-    font-family: sans-serif;
-    font-size:17px;
-    line-height: 1.5;
-}
-.about-content .button{
-    width:13%;
-    background-color: #3d3d3d;
-    padding:12px 12px;
-    margin:12px;
-    text-decoration:none;
-    color: #fff;
-    font-size:25px;
-    letter-spacing: 1.5px;
-}
-.button a{
-    color:white;
-    text-decoration: none;
+.content-selection {
+  font-size: 17px;
+  font-family: sans-serif;
+  line-height: 1.5;
 }
 
-.about-content .button a:hover{
-    background-color: teal;
-    color:white;
+.content-selection p,
+h1,
+h2 {
+  margin-top: 20px;
+}
+.content-selection #moreBtn {
+  width: 150px;
+  background-color: #205099;
+  padding: 5px 5px;
+  margin: 5px 0px;
+  color: #fff;
+  letter-spacing: 1.5px;
+}
+.content-selection #moreBtn:hover {
+  background-color: teal;
+  color: white;
+}
+.content-selection #more {
+  display: none;
+}
+
+.content-selection .about-content ul {
+  background-color: #1d3edb;
+  color: white;
+  font-weight: 400;
+  width: max-content;
+  padding: 30px 45px;
+  font-size: 20px;
+  display: block;
+  list-style-type: disc;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.content-selection table {
+  font-size: 20px;
+  line-height: 2;
+  background-color: rgba(255, 255, 255, 0.61);
+  width: 30%;
+}
+.content-selection table,
+th,
+td {
+  border: 1px double rgba(0, 0, 0, 0.281);
+}
+.content-selection th,
+td {
+  padding: 5px 10px;
+}
+.content-selection table th {
+  text-align: left;
 }
 
 /*contact*/

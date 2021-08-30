@@ -1,3 +1,32 @@
+<?php 
+session_start();
+include("management/config.php");
+include("management/function.php");
+ 
+ $username = $password = "";
+    if($_SERVER['REQUEST_METHOD']=="POST"){
+        $username = $_POST['uname'];
+        $password = $_POST['pword'];
+        $sql = "select * from user where username='$username' ";
+        
+        $result = mysqli_query($con, $sql);
+        $res = mysqli_fetch_array($result);
+        if ($res >= 1) {
+            $updt = "UPDATE `user` SET `last_login`=CURRENT_TIMESTAMP() where username='$username' and password = '$password'";
+            if (password_verify($password ,$res[2])) {
+                $_SESSION['id'] = $res['id'];
+                header("Location: management/housekeeping.php") ;
+            }
+           
+        }
+        else{
+            echo "<script> alert('Wrong username or password')</script>";
+        }
+        
+    }
+
+//test php
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,32 +73,4 @@
     </form>
 </body>
 </html>
-<?php 
-session_start();
-include("management/config.php");
-include("management/function.php");
- 
- $username = $password = "";
-    if($_SERVER['REQUEST_METHOD']=="POST"){
-        $username = $_POST['uname'];
-        $password = $_POST['pword'];
-        $sql = "select * from user where username='$username' ";
-        
-        $result = mysqli_query($con, $sql);
-        $res = mysqli_fetch_array($result);
-        if ($res >= 1) {
-            $updt = "UPDATE `user` SET `last_login`=CURRENT_TIMESTAMP() where username='$username' and password = '$password'";
-            if (password_verify($password ,$res[2])) {
-                $_SESSION['id'] = $res['id'];
-                header("Location: management/housekeeping.php") ;
-            }
-           
-        }
-        else{
-            echo "<script> alert('Wrong username or password')</script>";
-        }
-        
-    }
 
-//test php
-?>
