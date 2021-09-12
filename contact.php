@@ -45,6 +45,30 @@
 
 
     <div class= "contact">
+        <div class="contact-presentation">
+            <div class="contact-title">
+    
+                <h1>Get in Touch </h1>
+                <p>Got a question? We would love to hear from you and
+                    we’ll respond as soon as possible.</p>
+            </div>
+            <div class="contact-form" >
+                                <form id= "clear" action="https://formspree.io/imxalchhetri@gmail.com"
+                              method="POST">
+                                <input type="text" class="name" placeholder="Your Name" id="name" name="name">
+                                <div class="statusN"></div>
+                                <input type="text" class="subject" placeholder="Subject of Your Enquiry" id="subject" name="subject">
+                                <div class="statusS"> </div>
+                                <input type="text" class="email" placeholder="Your Email Address" id="email" name="email">
+                                <div class="statusE"> </div>
+                                <textarea name="message" class="message" id="message" placeholder="Message" style="height: 100px; font-size: 16px" ></textarea>
+                                <div class="statusM"> </div>
+                                <button type="submit" class="submit">Submit</button>
+                            </form>
+                    <div class="status"></div>
+            </div>
+    </div>
+    <div class="contact-details">
         <div class="contact-content">
             <h1>Contact Us</h1>
             <p></p>
@@ -80,38 +104,7 @@
             </div>
         </div>
     </div>
-    
-
-
-<div class ="ContactForm">
-    <form>
-        <h2>Message</h2>
-
-        <div class ="inputBox">
-            <input type="text" name="" required="required">
-            <span>Full Name</span>
     </div>
-
-    <div class ="inputBox">
-                <input type="text" name="" required="required">
-                <span>Email</span>
-    </div>
-
-    <div class ="inputBox">
-                <textarea required = "required"></textarea>
-                <span>Type your message</span>
-    </div>
-
-    <div class ="inputBox">
-                <input type="submit" name="" vlaue="send">
-            
-    </div>
-    </form>
-
-    </div>
-
-
-
 
     <footer class="footer">
         <div class="container">
@@ -155,4 +148,60 @@
   </footer>
         
 </body>
+<!-- importing jquery to run the JS code -->
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script>
+/*contact form validation */
+var name = null;
+var subject = null;
+var email = null;
+var message = null;
+
+window.onload = function() {
+  document.getElementById("clear").reset();
+};
+$(document).ready(function() {
+  $(".submit").click(function(event) {
+    var name = $(".name").val();
+    var subject = $(".subject").val();
+    var email = $(".email").val();
+    var message = $(".message").val();
+
+    var statusN = $(".statusN");
+    var statusS = $(".statusS");
+    var statusE = $(".statusE");
+    var statusM = $(".statusM");
+    var status = $(".status");
+    statusN.empty();
+    statusE.empty();
+    statusS.empty();
+    statusM.empty();
+
+    if (name.length < 3) {
+      event.preventDefault();
+      statusN.append(
+        "<div>&#9888 Name usually has more characters</div>"
+      );
+    }
+
+    if (email.length > 5 && email.includes("@") && email.includes(".")) {
+    } else {
+      event.preventDefault();
+      statusE.append("<div>&#9888 Email is not valid</div>");
+    }
+
+    if (subject.length <= 2) {
+      event.preventDefault();
+      statusS.append("<div>&#9888 Subject is not valid</div>");
+    }
+    if (message.length <= 5) {
+      event.preventDefault();
+      statusM.append(
+        "<div>&#9888 Please enter a valid message</div>"
+      );
+    }
+  });
+});
+</script>
+
 </html>
