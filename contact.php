@@ -53,7 +53,7 @@
                     we’ll respond as soon as possible.</p>
             </div>
             <div class="contact-form" >
-                                <form id= "clear" action="https://formspree.io/imxalchhetri@gmail.com"
+                                <form id= "clear" action="https://formspree.io/laxmisapkotachhetri@students.federation.edu.au"
                               method="POST">
                                 <input type="text" class="name" placeholder="Your Name" id="name" name="name">
                                 <div class="statusN"></div>
