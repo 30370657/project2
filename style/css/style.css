@@ -312,11 +312,11 @@ td {
 /*contact*/
 .contact {
   display: grid;
-  grid-template-columns: auto 600px;
+  grid-template-columns: auto 400px;
   grid-template-rows: 100%;
   grid-gap: 10%;
   max-width: auto;
-  margin: 5% 20% 5% 20%;
+  margin: 5% 10% 5% 10%;
 }
 
 /*header and contact form styles*/
@@ -324,7 +324,7 @@ td {
   background: #ffffff;
   background-size: max-content;
   border-radius: 1%;
-  width: 500px;
+  width: 400px;
   display: grid;
   justify-items: center;
   justify-content: center;
