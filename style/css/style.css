@@ -310,54 +310,80 @@ td {
 }
 
 /*contact*/
-.contact .contact-content h1{
-    font-size: 36px;
-    font-weight:500px;
-    color:#fff;
-    padding-left: 40px;
+.contact {
+  display: grid;
+  grid-template-columns: auto 400px;
+  grid-template-rows: 100%;
+  grid-gap: 10%;
+  max-width: auto;
+  margin: 5% 10% 5% 10%;
 }
 
-
-
-.contact-container{
-     
-    width:100%;
-    display: flex;
-    padding-left: 40px;
-    
+/*header and contact form styles*/
+.contact-presentation {
+  background: #ffffff;
+  background-size: max-content;
+  border-radius: 1%;
+  width: 400px;
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+  padding: 0 50px 0px 50px;
 }
 
-.contact-container .contactInfo {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-
-}
-.contact-container .contactInfo .box{
-    position: relative;
-    padding:20px 0px;
-    display: flex;
+.contact .contact-title {
+  margin-top: 40px;
 }
 
-.contact-container .contactInfo .box .icon{
-    min-width: 60px;
-    height: 60px;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    border-radius: 50%;
-    font-size: 22px;
+/*Get in touch header and a paragraph*/
+.contact-title h1 {
+  letter-spacing: 2px;
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
 }
 
-.contact-container .contactInfo .box .text{
-    display:flex;
-    margin-left: 20px;
-    font-size: 16px;
-    color: 16px;
-    flex-direction: column;
-    font-weight: 300;
+.contact-title p {
+  margin-top: 10px;
+  font-weight: 400;
+  text-align: left;
 }
+
+/*contact-form style*/
+.contact-form {
+  width: 100%;
+  margin-top: 50px;
+  transition: all 0.5s ease-out;
+}
+
+/*form area
+placeholder*/
+form input::placeholder,
+textarea::placeholder {
+  color: #221f1f93;
+}
+
+form input[type="text"],
+select,
+textarea {
+  width: 100%;
+  background: transparent;
+  margin-bottom: 5px;
+  resize: vertical;
+  color: #2b2a2a;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid rgb(95, 76, 76);
+  font-weight: 400;
+}
+
+form input[type="text"]:focus,
+textarea:focus {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #f7d600;
+}
+<<<<<<< HEAD
 .contact-container .contactInfo .box .text h3{ 
     font-weight: 500;
     color: #fcfcfc;
@@ -370,29 +396,81 @@ td {
     padding-left: 60px;
     background: #fff;
     align-items: center;
+=======
+>>>>>>> 7158913b6ddcd2fa6aa49c648588e5f5fb7851a0
 
+.contact-form button {
+  width: 100%;
+  height: 45px;
+  background: #d8580e;
+  text-transform: capitalize;
+  font-size: 26px;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-bottom: 1px solid gray;
+  cursor: pointer;
 }
 
-.ContactForm .inputBox{
-    position: relative;
-    width:100%;
-    margin-top:10px;
-
-}
-.ContactForm .inputBox input,
-.ContactForm .inputBox textarea{
-    width:50%;
-    padding:5px 0;
-    font-size:16px;
-    margin:10px 0;
-    border:none;
-    border-bottom: 2px solid #333;
-    outline:none;
-    resize: none;
+/*contact button hover*/
+.contact button:hover {
+  background: rgb(253, 38, 0);
+  font-size: 26px;
+  opacity: 0.9;
 }
 
-.ContactForm .inputBox span{
-    position: absolute;
-    left:0;
+/*form input error message style*/
+.contact-presentation .contact-form div {
+  margin-bottom: 25px;
+  color: rgb(253, 38, 0);
+  font-size: 14px;
+}
+
+.contact .contact-content h1 {
+  font-size: 36px;
+  font-weight: 500px;
+  color: #fff;
+  padding-left: 40px;
+}
+
+.contact-container {
+  width: 100%;
+  display: flex;
+  padding-left: 40px;
+}
+
+.contact-container .contactInfo {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.contact-container .contactInfo .box {
+  position: relative;
+  padding: 20px 0px;
+  display: flex;
+}
+
+.contact-container .contactInfo .box .icon {
+  min-width: 60px;
+  height: 60px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 22px;
+}
+
+.contact-container .contactInfo .box .text {
+  display: flex;
+  margin-left: 20px;
+  font-size: 16px;
+  color: 16px;
+  flex-direction: column;
+  font-weight: 300;
+}
+.contact-container .contactInfo .box .text h3 {
+  font-weight: 500;
+  color: #fcfcfc;
 }
 
