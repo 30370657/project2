@@ -66,7 +66,31 @@
                 <th>Price</th>
 
             </tr>
+            <?php  
+       
+                    
+                foreach($json_data['college'] as $college){
+                    
+                    foreach ($college['Course'] as $key ) {
+                        print"
+                        <tr> 
+                        <td>".$key['Name']."</td>
+                
+                        <td>".$key['Desc']."</td>
+                        
+                        <td>".$college['Name']."</td>
+                        
+                        <td>".$key['Code']."</td> 
+                        <td>".$key['ID']."</td>
+                        <td>".$college['College ID']."</td>
+                        </tr>";
+                    }
+                }
+                
+                    
+            ?>
         </table>
+            
         
    </div>
 
@@ -135,54 +159,6 @@
 </body>
 <script>
         
-    
-    var table = document.getElementById("data_table");
-        
-        
-       
-       <?php  
-            
-           foreach($json_data['college'] as $college){
-            
-           foreach ($college['Course'] as $key ) {
-               print"
-                var row = document.createElement('tr'); 
-                var course = document.createElement('td');
-                var desc = document.createElement('td');
-                var college = document.createElement('td');
-                var code = document.createElement('td');
-                var id = document.createElement('td');
-                var price = document.createElement('td');
-
-                course.innerHTML ='".$key['Name']."';
-                desc.innerHTML = '".$key['Desc']."';
-                college.innerHTML = '".$college['Name']."';
-                code.innerHTML = '".$key['Code']."';
-                id.innerHTML = '".$key['ID']."';
-                price.innerHTML = '".$college['College ID']."';
-
-                row.appendChild(course);
-                row.appendChild(desc);
-                row.appendChild(college);
-                row.appendChild(code);
-                row.appendChild(id);
-                row.appendChild(price);
-                table.appendChild(row);
-                
-
-
-               
-               
-               
-               ";
-               
-
-               
-            }
-        }
-        ?>
-        
-        
-        
+  
     </script>
 </html>
