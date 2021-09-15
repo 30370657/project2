@@ -1,7 +1,12 @@
 <?php 
+    include("management/config.php");
+    $sql = "SELECT cr.Name 'Course', cr.Description 'Desc', co.`College Name`,cr.ID 'Code',co.`College ABN` ABN, cr.Cost Price, co.link FROM course cr, college co WHERE cr.`College ID` = co.ID ";
+    $collegeData = mysqli_query($con,$sql);
     
-    $json_file = file_get_contents("data.json");
-    $json_data = json_decode($json_file, true);
+
+    
+   // $json_file = file_get_contents("data.json");
+    //$json_data = json_decode($json_file, true);
     
     
 ?>
@@ -56,36 +61,36 @@
    </div>
 
    <div class="course_data">
+        <button class="click">Test</button>
         <table class="table table-striped table-hover" id="data_table">
             <tr>
                 <th>Course</th>
                 <th>Desc</th>
                 <th>College Name</th>
                 <th>Code</th>
-                <th>Id</th>
+                <th>ABN</th>
                 <th>Price</th>
 
             </tr>
             <?php  
        
-                    
-                foreach($json_data['college'] as $college){
-                    
-                    foreach ($college['Course'] as $key ) {
-                        print"
-                        <tr> 
-                        <td>".$key['Name']."</td>
+                foreach($collegeData as $data){
                 
-                        <td>".$key['Desc']."</td>
-                        
-                        <td>".$college['Name']."</td>
-                        
-                        <td>".$key['Code']."</td> 
-                        <td>".$key['ID']."</td>
-                        <td>".$college['College ID']."</td>
-                        </tr>";
-                    }
-                }
+                   
+                    print"
+                    <tr href-data=".$data['link']."> 
+                    <td>".$data['Course']."</td>
+            
+                    <td>".$data['Desc']."</td>
+                    
+                    <td>".$data['College Name']."</td>
+                    
+                    <td>".$data['Code']."</td> 
+                    <td>".$data['ABN']."</td>
+                    <td>".$data['Price']."</td>
+                    </tr>";
+                }    
+                
                 
                     
             ?>
@@ -157,8 +162,10 @@
   </footer>
         
 </body>
-<script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
         
   
     </script>
+<script src="style/jquery/test.js">
+            </script>
 </html>
