@@ -459,4 +459,37 @@ textarea:focus {
   font-weight: 500;
   color: #fcfcfc;
 }
+#status {
+  width: 95%;
+  max-width: 500px;
+  text-align: center;
+  padding: 10px;
+  font-size: 16px;
+  margin: 0 auto;
+  border-radius: 9px;
+}
+#status.success {
+  background-color: rgb(198, 247, 126);
+  animation: status 10s ease forwards;
+}
+#status.error {
+  background-color: rgb(248, 114, 73);
+  color: white;
+  animation: status 10s ease forwards;
+}
+/* for status box */
+@keyframes status {
+  0% {
+    opacity: 1;
+    pointer-events: all;
+  }
+  90% {
+    opacity: 1;
+    pointer-events: all;
+  }
+  100% {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
 
