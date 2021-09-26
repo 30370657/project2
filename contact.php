@@ -1,20 +1,3 @@
-<?php
-if(!empty($_POST["send"])) {
-	$name = $_POST["FullName"];
-	$email = $_POST["Email"];
-	$content = $_POST["message"];
-
-	$toEmail = "lokeshgurung889@gmail.com";
-	$mailHeaders = "From: " . $name . "<". $email .">\r\n";
-	if(mail($toEmail, $content, $mailHeaders)) {
-	    $message = "Your contact information is received successfully.";
-	    $type = "success";
-	}
-}
-require_once "contact.php";
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,7 +53,7 @@ require_once "contact.php";
                     we’ll respond as soon as possible.</p>
             </div>
             <div class="contact-form" >
-                                <form id= "clear" action="https://formspree.io/laxmisapkotachhetri@students.federation.edu.au"
+                                <form id= "clear" action="https://formspree.io/imxalchhetri@gmail.com"
                               method="POST">
                                 <input type="text" class="name" placeholder="Your Name" id="name" name="name">
                                 <div class="statusN"></div>
@@ -121,44 +104,8 @@ require_once "contact.php";
             </div>
         </div>
     </div>
-<<<<<<< HEAD
-    
-
-
-<div class ="ContactForm">
-    <form id="contactphp" method="post" action="contact.php">
-        <h2>Message</h2>
-
-        <div class ="inputBox">
-            <input type="text" name="FullName" required="required">
-            <span>Full Name</span>
     </div>
 
-    <div class ="inputBox">
-                <input type="text" name="Email" required="required">
-                <span>Email</span>
-    </div> 
-
-    <div class ="inputBox">
-                <textarea name ="Message" required = "required"></textarea>
-                <span>Type your message</span>
-    </div>
-
-    <div class ="inputBox">
-                <input type="submit" name="" value="send">
-            
-    </div>
-    </form>
-
-    </div>
-
-
-
-
-=======
-    </div>
-
->>>>>>> 7158913b6ddcd2fa6aa49c648588e5f5fb7851a0
     <footer class="footer">
         <div class="container">
             <div class="row">
