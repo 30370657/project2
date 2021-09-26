@@ -153,6 +153,11 @@
 <!-- importing jquery to run the JS code -->
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <script>
+
+window.onload = function() {
+  document.getElementById("customer-form").reset();
+};
+
 /*contact form validation */
 var name = null;
 var subject = null;
@@ -212,7 +217,7 @@ window.addEventListener("DOMContentLoaded", function () {
   // Success and Error functions for after the form is submitted
 
   function success() {
-    form.reset();
+    window.setTimeout(function(){location.reload()},10000);
     status.classList.add("success");
     status.innerHTML = "Thanks! Form Submitted Successfully";
   }
