@@ -53,7 +53,7 @@
                     we’ll respond as soon as possible.</p>
             </div>
             <div class="contact-form" >
-                                 <form id= "clear" action="https://formspree.io/f/mvodljak"
+                                <form id= "customer-form" action="https://formspree.io/f/mvodljak"
                               method="POST">
                                 <input type="text" class="name" placeholder="Your Name" id="name" name="name">
                                 <div class="statusN"></div>
@@ -61,11 +61,13 @@
                                 <div class="statusS"> </div>
                                 <input type="text" class="email" placeholder="Your Email Address" id="email" name="email">
                                 <div class="statusE"> </div>
-                                <textarea name="message" class="message" id="message" placeholder="Message" style="height: 100px; font-size: 16px" ></textarea>
+                                <textarea name="message" class="message" id="message" placeholder="Message" style="height: 100px; font-size: 14px" ></textarea>
                                 <div class="statusM"> </div>
                                 <button type="submit" class="submit">Submit</button>
                             </form>
-                    <div class="status"></div>
+                            <br>
+                    <div id="status"></div>
+                    <br>
             </div>
     </div>
     <div class="contact-details">
@@ -157,9 +159,6 @@ var subject = null;
 var email = null;
 var message = null;
 
-window.onload = function() {
-  document.getElementById("clear").reset();
-};
 $(document).ready(function() {
   $(".submit").click(function(event) {
     var name = $(".name").val();
@@ -171,7 +170,7 @@ $(document).ready(function() {
     var statusS = $(".statusS");
     var statusE = $(".statusE");
     var statusM = $(".statusM");
-    var status = $(".status");
+    // var status = $(".status");
     statusN.empty();
     statusE.empty();
     statusS.empty();
@@ -202,6 +201,54 @@ $(document).ready(function() {
     }
   });
 });
+
+/*contact form sucess status*/
+window.addEventListener("DOMContentLoaded", function () {
+  // get the form elements defined in contact form
+
+  var form = document.getElementById("customer-form");
+  var status = document.getElementById("status");
+
+  // Success and Error functions for after the form is submitted
+
+  function success() {
+    form.reset();
+    status.classList.add("success");
+    status.innerHTML = "Thanks! Form Submitted Successfully";
+  }
+
+  function error() {
+    status.classList.add("error");
+    status.innerHTML = "Oops! There was a problem.";
+  }
+
+  // handle the form submission event
+
+  form.addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    var data = new FormData(form);
+    ajax(form.method, form.action, data, success, error);
+  });
+});
+
+// helper function for sending an AJAX request
+
+function ajax(method, url, data, success, error) {
+  var xhr = new XMLHttpRequest();
+  xhr.open(method, url);
+  xhr.setRequestHeader("Accept", "application/json");
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState !== XMLHttpRequest.DONE) return;
+    if (xhr.status === 200) {
+      success(xhr.response, xhr.responseType);
+    } else {
+      error(xhr.status, xhr.response, xhr.responseType);
+    }
+  };
+  xhr.send(data);
+}
+
+
 </script>
 
 </html>
