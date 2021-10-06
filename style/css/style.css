@@ -309,6 +309,71 @@ td {
   text-align: left;
 }
 
+
+/*educational agents page */
+.agent-page {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 88%; /*after deducting margin and padding and making section equal to top image */
+  height: max-content;
+  background-color: #f0f2f5;
+  margin-left: 3%;
+  padding: 1% 3% 3%;
+}
+.agent-page .agents-section {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 90%;
+  grid-template-rows: repeat(6, 1fr);
+  grid-gap: 30px;
+  justify-items: center;
+  justify-content: center;
+}
+/*image container*/
+.agent-page .circular-square {
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  overflow: hidden;
+  position: relative;
+}
+
+/*image style*/
+.agent-page .circular-square img {
+  width: auto;
+  height: 100%;
+}
+
+.agent-page h1 {
+  font-size: 36px;
+}
+.agent-page h2 {
+  font-size: 30px;
+}
+
+.agent-page h1,
+h2 {
+  color: #303030;
+  margin-bottom: 10px;
+}
+.agent-page .agents-section span {
+  font-weight: lighter;
+  line-height: 1.5;
+  color: #832407;
+}
+
+.agent-page .agents-section p {
+  font-size: 17px;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+.agent-page .agents-section .agent1,
+.agent {
+  background-color: #ffffff;
+  padding: 40px 30px;
+}
+
+
 /*contact*/
 
 .contact {
