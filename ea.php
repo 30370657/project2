@@ -37,11 +37,74 @@
             We do things differently! <br>
             <a href="contact.php">Get in touch today</a>
         </div>
-        
+        </div>
+    
+<!--Main content Educational consultants-->
+<div class="agent-page">
 
-
-
-
+            <h1>Educational Agents</h1>
+            <div class="agents-section">
+            <div class = "agent agent1">
+                <div class="circular-square">
+                    <img src="./media/image/gallery/Alam Bhuiyan.png">
+                </div>
+                <div class="agent1-details">
+                <h2>Alam Bhuiyan</h2>
+                <span>Executive Manager, Director CGA</span>
+                <p>At CareerGro Australia, Alam is responsible for developing international alliances and overall direction of the company. Alam has held roles in operations and production management in several food producing and distribution companies. He has been responsible for Public Relations, Policy development and implementation, Customer relations, Occupational Health & Safety and HR recruitment and training. Alam also volunteers as a community activist, representing the interests of disadvantaged and vulnerable community groups to local State and Federal  Government Agencies. </p>
+                </div>
+            </div>
+            <div class = "agent agent2">
+                <div class="circular-square">
+                    <img src="./media/image/gallery/Ashfaq Mohammad.png">
+                </div>
+                <div class="agent2-details">
+                <h2>Ashfaq Mohammad</h2>
+                <span>Principal Education Agent CGA</span>
+                <p>Ashfaq is the Principal Education Agent at CareerGro Australia. Originally a senior lawyer practicing Commercial Law in India before coming to Australia, Ashfaq has personal experience of being an International Student and applying for Australian Citizenship. Ashfaq has held positions in Occupational Health & Safety and is active in local community organisations. Agents are audited against the performance of the students that they sponsor and are required to be Registered with each Course Provider they promote, so Ashfaq looks after high level operations and quality systems.</p>
+                </div>
+            </div>
+            <div class = "agent agent3">
+                <div class="circular-square">
+                    <img src="./media/image/gallery/Lorraine Naylor.png">
+                </div>
+                <div class="agent3-details">
+                <h2>Lorraine Naylor</h2>
+                <span>Student Counselling and Education Specialist</span>
+                <p>Lorraine manages all matters related to the selection and management of University and Vocational Course Providers throughout Australia. Lorraine has previously held positions as a Corporate Educator  in Australia's largest company, Telstra, and has managed Training Organisations. She has also designed  specialist Courseware for delivery to International Students. Lorraine has a interest in Nursing education and the recruitment and placement of new graduates into local health care organisations. At CareerGro Australia, Lorraine will help Students understand their bigger picture for career and study pathways that support their aspirations.</p>
+                </div>
+            </div>
+            <div class = "agent agent4">
+                <div class="circular-square">
+                    <img src="./media/image/gallery/Nafees Mohammed.png">
+                </div>
+                <div class="agent4-details">
+                <h2>Nafees Mohammed</h2>
+                <span>Commercial Manager, Director CGA</span>
+                <p>Nafees is a trained lawyer from India who also holds a Master of Commerce from Ballarat University in Australia.  Nafees has personal experience of the Australian education system and the processes for acquiring local citizenship. She has worked in various Accounting roles since arriving in Australia. At CareerGro Australia, Nafees oversees financial, legal, compliance and regulatory affairs.</p>
+                </div>
+            </div>
+            <div class = "agent agent5">
+                <div class="circular-square">
+                    <img src="./media/image/gallery/John Minicz.png">
+                </div>
+                <div class="agent5-details">
+                <h2>John Minicz</h2>
+                <span>Development Manager, Director CGA</span>
+                <p>John brings a broad range of skills covering market research, vendor management, systems and process design and has  worked on challenging problems over the years for clients in the manufacturing, financial services, retail, telecommunications and logistics sectors. His commercial practice has included client acquisition, bid & proposal management, contract negotiation, software integration and SLA management. John is a Course committee member with Melbourne Polytechnic. At CareerGro Australia, he is designing  the IT services for student engagement processes.</p>
+                </div>
+            </div>
+            <div class = "agent agent6">
+                <div class="circular-square">
+                    <img src="./media/image/gallery/CareerGro India.png">
+                </div>
+                <div class="agent5-details">
+                <h2>CareerGro India</h2>
+                <span>Student Marketing Programmes, Independent Agents</span>
+                <p>Internationally, CareerGro has a trained network of Sub-agents who are in regular contact with communities and schools interested in overseas education programmes. Key promoters have long years of practice in student recruitment and vocational training. CareerGro Australia takes on the role of Train-the-Trainer to ensure that members of CareerGro India are familiar with the requirements and subtleties of the Australian Qualification Framework. Students are introduced to Australian study opportunities and can then take part in a series of interviews to develop and refine their Course preferences and desired outcomes.</p>
+                </div>
+            </div>
+        </div>
 
     </div>
 
