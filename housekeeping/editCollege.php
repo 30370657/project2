@@ -72,13 +72,13 @@ if(isset($_POST['signout'])){
     </div>
     
     <div class="createData">
-        <h2>Course Data</h2>
+        <h2>College Data</h2>
         <form action="" method="post">
 
             <select name="selected" id="dropDownSelect" onchange="checkCollege(this.value)">
                 <option value="0">New</option>
                 <?php 
-                    foreach($courseData as $cData){
+                    foreach($collegeData as $cData){
                     
                         print"<option value=". $cData['ID'].">".$cData['Name']."</option>";
                     }
@@ -88,26 +88,16 @@ if(isset($_POST['signout'])){
                 
             </select>
             <div id="forms">
-                <label for="CollegeName">Course Name</label>
-                <input type="text" name="couName">
-                <label for="Desc">Desc</label>
-                <input type="text" name="desc">
-                <label for="Cost">Cost</label>
-                <input type="text" name="Cost">
-                <label for="College ID">College ID</label>
-                <select name="CollegeID">
-                    <?php 
-                        foreach($collegeData as $cData){
-                        
-                            print"<option value=". $cData['ID'].">".$cData['Name']."</option>";
-                        }
-                        
-                    
-                    ?>
-
-                    </select>
-                
-                <br><br>
+            <label for="CollegeName">College Name</label>
+<input type="text" name="colName" >
+<label for="ABN">ABN</label>
+ <input type="text" name="abn" >
+<label for="Address">Address</label>
+<input type="text" name="location" >
+<label for="Link">Link</label>
+<input type="text" name="link" >
+<label for="CIdentifir">College Identifier</label>
+<input type="text" name="cidentifier"  ><br><br>
 
             </div>
 
@@ -136,13 +126,13 @@ if(isset($_POST['signout'])){
     if(isset($_POST['Add'])){
         try {
             
-           $couName= $_POST['couName'];
-           $desc =  $_POST['desc'];
+           $colName= $_POST['colName'];
+           $abn =  $_POST['abn'];
          
-           $Cost = $_POST['Cost'];
-           $CId = $_POST['CollegeID'];
-           
-            $sql="INSERT INTO `course`( `Name`, `Desc`, `Cost`, `College ID`) VALUES ('$couName', '$desc',' $Cost', '$CId')";
+           $location = $_POST['location'];
+           $link = $_POST['link'];
+           $cidentifier = $_POST['cidentifier'];
+            $sql="INSERT INTO `college`( `Name`, `ABN`, `Location`, `link`, `CIdentifier`) VALUES ('$colName', '$abn',' $location', '$link', '$cidentifier')";
             
            if(mysqli_query($con,$sql)){
                echo "<script>alert('success')</script>";
@@ -173,7 +163,7 @@ if(isset($_POST['signout'])){
         
         $.ajax({
             
-            url:'getCourse.php',
+            url:'getCollege.php',
             method:'POST',
             data:{'key' : p },
             success:function(data){

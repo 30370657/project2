@@ -1,6 +1,6 @@
 <?php 
     include("management/config.php");
-    $sql = "SELECT cr.Name 'Course', cr.Description 'Desc', co.`College Name`,cr.ID 'Code',co.`College ABN` ABN, cr.Cost Price, co.link FROM course cr, college co WHERE cr.`College ID` = co.ID ";
+    $sql = "SELECT cr.Name 'Course', cr.Desc 'Desc', co.`Name`,cr.ID 'Code',co.`ABN` ABN, cr.Cost Price, co.link FROM course cr, college co WHERE cr.`College ID` = co.ID ";
     $collegeData = mysqli_query($con,$sql);
     
 
@@ -83,7 +83,7 @@
             
                     <td>".$data['Desc']."</td>
                     
-                    <td>".$data['College Name']."</td>
+                    <td>".$data['Name']."</td>
                     
                     <td>".$data['Code']."</td> 
                     <td>".$data['ABN']."</td>

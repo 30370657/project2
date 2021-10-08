@@ -51,8 +51,8 @@ if(isset($_POST['signout'])){
     <div class="vnav">
         <div class="nav-item">
             
-            <a href="editCourse.php">Course Editor</a><br>
-            <a href="teamEdit.php">Team Info </a><br>
+            <a href="editCollege.php">College Editor</a><br>
+            <a href="editCourse.php">Course Info </a><br>
             <a href="editUser.php">Settings</a><br>
         </div>
     </div>
