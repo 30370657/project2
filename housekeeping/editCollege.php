@@ -88,16 +88,16 @@ if(isset($_POST['signout'])){
                 
             </select>
             <div id="forms">
-            <label for="CollegeName">College Name</label>
-<input type="text" name="colName" >
-<label for="ABN">ABN</label>
- <input type="text" name="abn" >
-<label for="Address">Address</label>
-<input type="text" name="location" >
-<label for="Link">Link</label>
-<input type="text" name="link" >
-<label for="CIdentifir">College Identifier</label>
-<input type="text" name="cidentifier"  ><br><br>
+                <label for="CollegeName">College Name</label>
+                <input type="text" name="colName" >
+                <label for="ABN">ABN</label>
+                <input type="text" name="abn" >
+                <label for="Address">Address</label>
+                <input type="text" name="location" >
+                <label for="Link">Link</label>
+                <input type="text" name="link" >
+                <label for="CIdentifir">College Identifier</label>
+                <input type="text" name="cidentifier"  ><br><br>
 
             </div>
 
@@ -123,30 +123,39 @@ if(isset($_POST['signout'])){
 </html>
 
 <?php 
-    if(isset($_POST['Add'])){
-        try {
-            
-           $colName= $_POST['colName'];
-           $abn =  $_POST['abn'];
-         
-           $location = $_POST['location'];
-           $link = $_POST['link'];
-           $cidentifier = $_POST['cidentifier'];
-            $sql="INSERT INTO `college`( `Name`, `ABN`, `Location`, `link`, `CIdentifier`) VALUES ('$colName', '$abn',' $location', '$link', '$cidentifier')";
-            
-           if(mysqli_query($con,$sql)){
-               echo "<script>alert('success')</script>";
-               header("Refresh:0");
-           }
-            
-        } catch (Exception $th) {
-            print"<script>alert('hi')";
-            echo $e->getMessage();
-        }
+    if(isset($_POST)){
+        $colName= $_POST['colName'];
+        $abn =  $_POST['abn'];
+        $id = $_POST['selected'];
+        $location = $_POST['location'];
+        $link = $_POST['link'];
+        $cidentifier = $_POST['cidentifier'];
+
+        if(isset($_POST['Add'])){
         
-    }elseif(isset($_POST['Update'])){
-        print"<script>alert('Error')</script>";
+            try {
+                
+               
+                $sql="INSERT INTO `college`( `Name`, `ABN`, `Location`, `link`, `CIdentifier`) VALUES ('$colName', '$abn',' $location', '$link', '$cidentifier')";
+                
+               if(mysqli_query($con,$sql)){
+                   echo "<script>alert('success')</script>";
+                   header("Refresh:0");
+               }
+                
+            } catch (Exception $th) {
+                print"<script>alert('hi')";
+                echo $e->getMessage();
+            }
+            
+        }elseif(isset($_POST['Update'])){
+            $sql="Update `college` set `Name` = '$colName', `ABN`= '$abn' , `Location`= ' $location', `link`= '$link', `CIdentifier`='$cidentifier' where `ID` = '$id' ";
+            print"<script>alert(".$id.")</script>";
+                
+        }
+
     }
+    
 
 
 ?>
