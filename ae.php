@@ -61,7 +61,7 @@
    </div>
 
    <div class="course_data">
-        <button class="click">Test</button>
+        
         <table class="table table-striped table-hover" id="data_table">
             <tr>
                 <th>Course</th>
@@ -162,10 +162,6 @@
   </footer>
         
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
-        
-  
-    </script>
-<script src="style/jquery/test.js">
-            </script>
+
+
 </html>

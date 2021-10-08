@@ -38,7 +38,7 @@ $userData = check_login($con);
             <a href="contact.php">Contact</a>
             <?php 
                 if($userData){
-                    echo "<a href='management/housekeeping.php' style='float:right'>House Keeping </a>";
+                    echo "<a href='housekeeping/housekeeping.php' style='float:right'>House Keeping </a>";
                 }
                 else{
                     echo "<a href='login.php' style='float:right'>Sign In </a>";

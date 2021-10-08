@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 05, 2021 at 01:34 PM
+-- Generation Time: Sep 29, 2021 at 02:16 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.8
 
@@ -26,9 +26,58 @@ USE `test`;
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `college`
+--
+
+DROP TABLE IF EXISTS `college`;
+CREATE TABLE `college` (
+  `ID` int(11) NOT NULL,
+  `College Name` varchar(255) NOT NULL,
+  `College ABN` int(11) NOT NULL,
+  `Location` varchar(255) NOT NULL,
+  `link` varchar(255) NOT NULL,
+  `CIdentifier` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `course`
+--
+
+DROP TABLE IF EXISTS `course`;
+CREATE TABLE `course` (
+  `ID` int(11) NOT NULL,
+  `Name` varchar(255) NOT NULL,
+  `Description` varchar(255) NOT NULL,
+  `Cost` int(11) NOT NULL,
+  `College ID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `team`
+--
+
+DROP TABLE IF EXISTS `team`;
+CREATE TABLE `team` (
+  `id` int(11) NOT NULL,
+  `Name` varchar(255) NOT NULL,
+  `Email` varchar(255) NOT NULL,
+  `Phone` varchar(255) NOT NULL,
+  `start_time` time NOT NULL,
+  `end_time` time NOT NULL,
+  `onLeave` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
+DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
@@ -48,6 +97,25 @@ INSERT INTO `user` (`id`, `username`, `password`, `last_login`) VALUES
 --
 
 --
+-- Indexes for table `college`
+--
+ALTER TABLE `college`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `course`
+--
+ALTER TABLE `course`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `College ID` (`College ID`);
+
+--
+-- Indexes for table `team`
+--
+ALTER TABLE `team`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -58,10 +126,38 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `college`
+--
+ALTER TABLE `college`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `course`
+--
+ALTER TABLE `course`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `team`
+--
+ALTER TABLE `team`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `course`
+--
+ALTER TABLE `course`
+  ADD CONSTRAINT `course_ibfk_1` FOREIGN KEY (`College ID`) REFERENCES `college` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

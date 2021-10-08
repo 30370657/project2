@@ -15,7 +15,7 @@ include("management/function.php");
             $updt = "UPDATE `user` SET `last_login`=CURRENT_TIMESTAMP() where username='$username' and password = '$password'";
             if (password_verify($password ,$res[2])) {
                 $_SESSION['id'] = $res['id'];
-                header("Location: management/housekeeping.php") ;
+                header("Location: housekeeping/housekeeping.php") ;
             }
            
         }

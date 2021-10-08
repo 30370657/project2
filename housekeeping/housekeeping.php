@@ -1,7 +1,7 @@
 <?php 
 session_start();
-include("config.php");
-include("function.php");
+include("../management/config.php");
+include("../management/function.php");
 
 $user_data = check_login($con);
 if(!($_SESSION['id'])){
@@ -42,11 +42,24 @@ if(isset($_POST['signout'])){
             <a href="../ae.php">Educational Agents</a>
             <a href="../ea.php">Australian Education</a>
             <a href="../contact.php">Contact</a>
+            
             <a class="active" href="signout.php" style="float:right">Sign Out </a>
         </nav>
 
 
     </header>
+    <div class="vnav">
+        <div class="nav-item">
+            
+            <a href="editCourse.php">Course Editor</a><br>
+            <a href="teamEdit.php">Team Info </a><br>
+            <a href="editUser.php">Settings</a><br>
+        </div>
+    </div>
+    <div class="info">
+        <h1>Welcome to the housekeeping</h1>
+        <h2>You can edit the information about users, courses and team from this place.</h2>
+    </div>
     
 </body>
 </html>
