@@ -139,7 +139,7 @@ if(isset($_POST['signout'])){
             
            $couName= $_POST['couName'];
            $desc =  $_POST['desc'];
-         
+            $ID = $_POST['selected'];
            $Cost = $_POST['Cost'];
            $CId = $_POST['CollegeID'];
            
@@ -156,7 +156,26 @@ if(isset($_POST['signout'])){
         }
         
     }elseif(isset($_POST['Update'])){
-        print"<script>alert('Error')</script>";
+        $couName= $_POST['couName'];
+           $desc =  $_POST['desc'];
+            $ID = $_POST['selected'];
+           $Cost = $_POST['Cost'];
+           $CId = $_POST['CollegeID'];
+        $sql="UPDATE `course` SET `Name`= '$couName', `Desc`='$desc', `Cost`='$Cost', `College ID`='$CId' WHERE `ID` = '$ID' ";
+        if(mysqli_query($con,$sql)){
+            print"<script>alert('Success')</script>";
+            header("Refresh:0");
+
+        }
+       
+    }elseif(isset($_POST['Delete'])){
+        $ID = $_POST['selected'];
+        $sql="Delete FROM Course where `ID` = $ID";
+        if(mysqli_query($con, $sql)){
+           
+            print"<script>alert('Successfully Deleted')</script>";
+            header("Refresh:0");
+        }
     }
 
 

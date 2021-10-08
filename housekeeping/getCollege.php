@@ -24,6 +24,8 @@
 <label for="Link">Link</label>
 <input type="text" name="link" value='<?php echo $res['link']?>'>
 <label for="CIdentifir">College Identifier</label>
-<input type="text" name="cidentifier" value='<?php echo $res['CIdentifier']?>' ><br><br>
+<input type="text" name="cidentifier" value='<?php echo $res['CIdentifier']?>' >
+<input type="submit" name="Delete" value="Delete">
+<br><br>
 
 

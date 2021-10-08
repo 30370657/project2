@@ -28,14 +28,16 @@
 <input type="text" name="Cost" value='<?php echo $res['Cost']?>'>
 <label for="College ID">College ID</label>
 <select name="CollegeID" >
-    <option value='<?php echo $res['ID']?>'><?php echo $res['Name']?> (Current College)</option>
+    <option value='<?php echo $res['ID']?>' selected=True><?php echo $res['Name']?> (Current College)</option>
     <?php 
         foreach($collegeData as $data){ var_dump($data)?>
             <option value='<?php echo $data['ID']?>'><?php echo $data['Name']?> </option> 
         <?php } ?>
+
     
     
 </select>
+<input type="submit" name="Delete" value="Delete">
 <br><br>
 
 

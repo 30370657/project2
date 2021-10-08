@@ -11,12 +11,9 @@ if(!($_SESSION['id'])){
     header("Location: ../login.php");
 }
 
-$collegeSql = "Select * from college";
-$courseSql = "Select * from course";
+$userSql = "Select * from user";
 
-
-$collegeData =mysqli_query($con,$collegeSql);
-$courseData = mysqli_query($con,$courseSql);
+$user = mysqli_query($con,$userSql);
 
 
 
@@ -78,9 +75,9 @@ if(isset($_POST['signout'])){
             <select name="selected" id="dropDownSelect" onchange="checkCollege(this.value)">
                 <option value="0">New</option>
                 <?php 
-                    foreach($collegeData as $cData){
+                    foreach($user as $cData){
                     
-                        print"<option value=". $cData['ID'].">".$cData['Name']."</option>";
+                        print"<option value=". $cData['id'].">".$cData['username']."</option>";
                     }
                     
                 
@@ -88,17 +85,12 @@ if(isset($_POST['signout'])){
                 
             </select>
             <div id="forms">
-                <label for="CollegeName">College Name</label>
-                <input type="text" name="colName" >
-                <label for="ABN">ABN</label>
-                <input type="text" name="abn" >
-                <label for="Address">Address</label>
-                <input type="text" name="location" >
-                <label for="Link">Link</label>
-                <input type="text" name="link" >
-                <label for="CIdentifir">College Identifier</label>
-                <input type="text" name="cidentifier"  ><br><br>
-
+                <label for="username">Name</label>
+                <input type="text" name="username" >
+                <label for="Password">Password</label>
+                <input type="password" name="pword1" >
+                <input type="password" name="pword2" >
+                
             </div>
 
             <input type="submit" id="btn" name="Add" value="Add">
@@ -127,46 +119,57 @@ if(isset($_POST['signout'])){
        
 
         if(isset($_POST['Add'])){
-            $colName= $_POST['colName'];
-            $abn =  $_POST['abn'];
-            $id = $_POST['selected'];
-            $location = $_POST['location'];
-            $link = $_POST['link'];
-            $cidentifier = $_POST['cidentifier'];
-        
-            try {
+            $username = $_POST['username'];
+            $pword =  $_POST['pword1'];
+            $pword2 = $_POST['pword2'];
+           
+           
+            if($pword == $pword2){
+                $pword = password_hash($pword2, PASSWORD_DEFAULT);
+
+                try {
                 
                
-                $sql="INSERT INTO `college`( `Name`, `ABN`, `Location`, `link`, `CIdentifier`) VALUES ('$colName', '$abn',' $location', '$link', '$cidentifier')";
-                
-               if(mysqli_query($con,$sql)){
-                   echo "<script>alert('success')</script>";
-                   header("Refresh:0");
-               }
-                
-            } catch (Exception $th) {
-                print"<script>alert('hi')";
-                echo $e->getMessage();
+                    $sql="INSERT INTO `user`( `username`, `password`) VALUES ('$username', '$pword')";
+                    
+                    
+                    if(mysqli_query($con,$sql)){
+                       echo "<script>alert('success')</script>";
+                       header("Refresh:0");
+                   }
+                    
+                } catch (Exception $th) {
+                    print"<script>alert('hi')";
+                    echo $e->getMessage();
+                }
+
             }
+        
+            
             
         }elseif(isset($_POST['Update'])){
-            $colName= $_POST['colName'];
-            $abn =  $_POST['abn'];
+            $username= $_POST['username'];
+            $pword =  $_POST['pword1'];
+            $pword2 = $_POST['pword2'];
             $id = $_POST['selected'];
-            $location = $_POST['location'];
-            $link = $_POST['link'];
-            $cidentifier = $_POST['cidentifier'];
-            $sql="Update `college` set `Name` = '$colName', `ABN`= '$abn' , `Location`= ' $location', `link`= '$link', `CIdentifier`='$cidentifier' where `ID` = '$id' ";
-            if(mysqli_query($con, $sql)){
+           
+            if($pword == $pword2){
+                $pword = password_hash($pword2, PASSWORD_DEFAULT);
+                $sql="Update `user` set `username` = '$username', `password`= '$pword' where `id` = '$id' ";
+                if(mysqli_query($con, $sql)){
                 print"<script>alert('Success')</script>";
                 header("Refresh:0");
 
+            }else{
+                print"<script>alert('Password Not Matching')</script>";
             }
-           
+    
+            }
+                       
                 
         }elseif(isset($_POST['Delete'])){
             $ID = $_POST['selected'];
-            $sql="Delete FROM College where ID = $ID";
+            $sql="Delete FROM user where id = $ID";
             if(mysqli_query($con, $sql)){
                
                 print"<script>alert('Successfully Deleted')</script>";
@@ -192,7 +195,7 @@ if(isset($_POST['signout'])){
         
         $.ajax({
             
-            url:'getCollege.php',
+            url:'getUser.php',
             method:'POST',
             data:{'key' : p },
             success:function(data){
