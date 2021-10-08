@@ -1,4 +1,7 @@
-<?php 
+<?php
+
+use FFI\CData;
+
 session_start();
 include("../management/config.php");
 include("../management/function.php");
@@ -8,7 +11,14 @@ if(!($_SESSION['id'])){
     header("Location: ../login.php");
 }
 
+$collegeSql = "Select * from college";
+$courseSql = "Select * from course";
 
+
+$collegeData =mysqli_query($con,$collegeSql);
+$courseData = mysqli_query($con,$courseSql);
+
+print_r($collegeData);
 
 
 if(isset($_POST['signout'])){
@@ -22,7 +32,9 @@ if(isset($_POST['signout'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/css/bootstrap.css">
     <link rel="stylesheet" href="../style/css/style.css">
+    
     <title>Housekeeping</title>
 </head>
 <body>
@@ -59,23 +71,46 @@ if(isset($_POST['signout'])){
     
     <div class="createData">
         <form action="" method="post">
-        <label for="CourseName">Course Name</label>
-        <input type="text" name="cName">
-        <label for="Description">Description</label>
-        <input type="text" name="desc">
-        <label for="Cost">Cost</label>
-        <input type="text" name="cost"><br><br>
-        <label for="CollegeName">College Name</label>
-        <input type="text" name="colName">
-        <label for="ABN">ABN</label>
-        <input type="text" name="abn">
-        <label for="Address">Address</label>
-        <input type="text" name="location">
-        <label for="Link">Link</label>
-        <input type="text" name="link">
-        <label for="CIdentifir">College Identifier</label>
-        <input type="text" name="cidentifier"><br><br>
-        <input type="submit" name="submit" value="Add Data">
+
+        <select name="selected" id="dropDownSelect">
+            <option value="New">New</option>
+            <?php 
+                foreach($courseData as $cData){
+                   
+                    print"
+                    <option value=".json_encode($cData).">".$cData['Name']."</option>";
+                }
+                
+            
+            ?>
+            
+        </select>
+        <?php 
+            if(isset($select)){
+                var_dump($select['Name']);
+            }
+            
+                
+        ?>
+                
+            <input type="submit" name="selectButton" value="SelectData"   >
+            <label for="CourseName">Course Name</label>
+            <input type="text" name="cName">
+            <label for="Description">Description</label>
+            <input type="text" name="desc">
+            <label for="Cost">Cost</label>
+            <input type="text" name="cost"><br><br>
+            <label for="CollegeName">College Name</label>
+            <input type="text" name="colName">
+            <label for="ABN">ABN</label>
+            <input type="text" name="abn">
+            <label for="Address">Address</label>
+            <input type="text" name="location">
+            <label for="Link">Link</label>
+            <input type="text" name="link">
+            <label for="CIdentifir">College Identifier</label>
+            <input type="text" name="cidentifier"><br><br>
+            <input type="submit" name="submit" value="Add Data">
 
         </form>
         
@@ -89,9 +124,4 @@ if(isset($_POST['signout'])){
 </body>
 </html>
 
-<?php 
-    if(isset($_POST['submit'])){
-        echo $_POST['cName'];
-    }
 
-?>
