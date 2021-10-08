@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 29, 2021 at 02:16 PM
+-- Generation Time: Oct 08, 2021 at 02:57 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.8
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `test`
 --
-CREATE DATABASE IF NOT EXISTS `test` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `test`;
 
 -- --------------------------------------------------------
 
@@ -29,15 +27,25 @@ USE `test`;
 -- Table structure for table `college`
 --
 
-DROP TABLE IF EXISTS `college`;
 CREATE TABLE `college` (
   `ID` int(11) NOT NULL,
-  `College Name` varchar(255) NOT NULL,
-  `College ABN` int(11) NOT NULL,
+  `Name` varchar(255) NOT NULL,
+  `ABN` int(11) NOT NULL,
   `Location` varchar(255) NOT NULL,
   `link` varchar(255) NOT NULL,
   `CIdentifier` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `college`
+--
+
+INSERT INTO `college` (`ID`, `Name`, `ABN`, `Location`, `link`, `CIdentifier`) VALUES
+(7, 'Test 1', 0, 'terst', '', 'COl'),
+(8, 'Test3', 123, 'Test', 'TEst', 'Tes3'),
+(9, 'Test 2', 123, ' ', '', ''),
+(10, ' ADS', 0, '  asdf', ' asdf', ' asdf'),
+(11, 'asdf', 0, ' sdf', 'sdf', 'asdfsdf');
 
 -- --------------------------------------------------------
 
@@ -45,14 +53,21 @@ CREATE TABLE `college` (
 -- Table structure for table `course`
 --
 
-DROP TABLE IF EXISTS `course`;
 CREATE TABLE `course` (
   `ID` int(11) NOT NULL,
   `Name` varchar(255) NOT NULL,
-  `Description` varchar(255) NOT NULL,
+  `Desc` varchar(255) NOT NULL,
   `Cost` int(11) NOT NULL,
   `College ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `course`
+--
+
+INSERT INTO `course` (`ID`, `Name`, `Desc`, `Cost`, `College ID`) VALUES
+(9, 'CTest1', 'CTest1', 0, 7),
+(10, 'NewCourse', 'Test', 1500, 7);
 
 -- --------------------------------------------------------
 
@@ -60,7 +75,6 @@ CREATE TABLE `course` (
 -- Table structure for table `team`
 --
 
-DROP TABLE IF EXISTS `team`;
 CREATE TABLE `team` (
   `id` int(11) NOT NULL,
   `Name` varchar(255) NOT NULL,
@@ -77,7 +91,6 @@ CREATE TABLE `team` (
 -- Table structure for table `user`
 --
 
-DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
@@ -129,13 +142,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `college`
 --
 ALTER TABLE `college`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `course`
 --
 ALTER TABLE `course`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `team`
