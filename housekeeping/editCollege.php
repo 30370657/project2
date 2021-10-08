@@ -124,14 +124,15 @@ if(isset($_POST['signout'])){
 
 <?php 
     if(isset($_POST)){
-        $colName= $_POST['colName'];
-        $abn =  $_POST['abn'];
-        $id = $_POST['selected'];
-        $location = $_POST['location'];
-        $link = $_POST['link'];
-        $cidentifier = $_POST['cidentifier'];
+       
 
         if(isset($_POST['Add'])){
+            $colName= $_POST['colName'];
+            $abn =  $_POST['abn'];
+            $id = $_POST['selected'];
+            $location = $_POST['location'];
+            $link = $_POST['link'];
+            $cidentifier = $_POST['cidentifier'];
         
             try {
                 
@@ -149,8 +150,19 @@ if(isset($_POST['signout'])){
             }
             
         }elseif(isset($_POST['Update'])){
+            $colName= $_POST['colName'];
+            $abn =  $_POST['abn'];
+            $id = $_POST['selected'];
+            $location = $_POST['location'];
+            $link = $_POST['link'];
+            $cidentifier = $_POST['cidentifier'];
             $sql="Update `college` set `Name` = '$colName', `ABN`= '$abn' , `Location`= ' $location', `link`= '$link', `CIdentifier`='$cidentifier' where `ID` = '$id' ";
-            print"<script>alert(".$id.")</script>";
+            if(mysqli_query($con, $sql)){
+                print"<script>alert('Success')</script>";
+                header("Refresh:0");
+
+            }
+           
                 
         }
 

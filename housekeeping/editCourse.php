@@ -6,6 +6,7 @@ session_start();
 include("../management/config.php");
 include("../management/function.php");
 
+
 $user_data = check_login($con);
 if(!($_SESSION['id'])){
     header("Location: ../login.php");
@@ -88,7 +89,7 @@ if(isset($_POST['signout'])){
                 
             </select>
             <div id="forms">
-                <label for="CollegeName">Course Name</label>
+                <label for="CouName">Course Name</label>
                 <input type="text" name="couName">
                 <label for="Desc">Desc</label>
                 <input type="text" name="desc">
@@ -165,6 +166,7 @@ if(isset($_POST['signout'])){
 <script>
     function checkCollege(ind){
         var p = ind
+       
 
         if (p == 0) {
             $("#btn").val("Add");

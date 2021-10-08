@@ -1,8 +1,13 @@
 <?php 
     include("../management/config.php");
+
     $k = $_GET['key'];
     $sql = "Select * from course where ID = $k limit 1";
     $res = mysqli_fetch_assoc(mysqli_query($con,$sql));
+
+    $collegeSql = "Select * from college";
+    $collegeData =mysqli_query($con,$collegeSql);
+    
     
 
     if( $res == 0){
@@ -22,7 +27,15 @@
 <label for="Cost">Cost</label>
 <input type="text" name="Cost" value='<?php echo $res['Cost']?>'>
 <label for="College ID">College ID</label>
-<input type="text" name="College ID" value='<?php echo $res['College ID']?>'>
+<select name="CollegeID" >
+    <option value='<?php echo $res['ID']?>'><?php echo $res['Name']?> (Current College)</option>
+    <?php 
+        foreach($collegeData as $data){ var_dump($data)?>
+            <option value='<?php echo $data['ID']?>'><?php echo $data['Name']?> </option> 
+        <?php } ?>
+    
+    
+</select>
 <br><br>
 
 
