@@ -11,6 +11,15 @@ function check_login($con){
 
 }
 
+function getById($con, $id){
+    $query = "select * from user where id ='$id' limit 1";
+    $data = mysqli_fetch_array(mysqli_query($con,$query));
+    return $data;
+
+}
+
+
+
 
 
 ?>

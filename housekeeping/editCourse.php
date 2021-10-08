@@ -18,7 +18,7 @@ $courseSql = "Select * from course";
 $collegeData =mysqli_query($con,$collegeSql);
 $courseData = mysqli_query($con,$courseSql);
 
-print_r($collegeData);
+
 
 
 if(isset($_POST['signout'])){
@@ -36,6 +36,8 @@ if(isset($_POST['signout'])){
     <link rel="stylesheet" href="../style/css/style.css">
     
     <title>Housekeeping</title>
+    
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 </head>
 <body>
 <header>
@@ -72,45 +74,25 @@ if(isset($_POST['signout'])){
     <div class="createData">
         <form action="" method="post">
 
-        <select name="selected" id="dropDownSelect">
-            <option value="New">New</option>
+        <select name="selected" id="dropDownSelect" onchange="checkCollege(this.value)">
+            <option value="0">New</option>
             <?php 
-                foreach($courseData as $cData){
+                foreach($collegeData as $cData){
                    
-                    print"
-                    <option value=".json_encode($cData).">".$cData['Name']."</option>";
+                    print"<option value=". $cData['ID'].">".$cData['Name']."</option>";
                 }
                 
             
             ?>
             
         </select>
-        <?php 
-            if(isset($select)){
-                var_dump($select['Name']);
-            }
+        <div id="forms"></div>
             
                 
-        ?>
+        
                 
-            <input type="submit" name="selectButton" value="SelectData"   >
-            <label for="CourseName">Course Name</label>
-            <input type="text" name="cName">
-            <label for="Description">Description</label>
-            <input type="text" name="desc">
-            <label for="Cost">Cost</label>
-            <input type="text" name="cost"><br><br>
-            <label for="CollegeName">College Name</label>
-            <input type="text" name="colName">
-            <label for="ABN">ABN</label>
-            <input type="text" name="abn">
-            <label for="Address">Address</label>
-            <input type="text" name="location">
-            <label for="Link">Link</label>
-            <input type="text" name="link">
-            <label for="CIdentifir">College Identifier</label>
-            <input type="text" name="cidentifier"><br><br>
-            <input type="submit" name="submit" value="Add Data">
+            
+            
 
         </form>
         
@@ -125,3 +107,20 @@ if(isset($_POST['signout'])){
 </html>
 
 
+<script>
+    function checkCollege(ind){
+        var p = ind
+        
+        $.ajax({
+            
+            url:'getCollege.php',
+            method:'POST',
+            data:{'key' : p },
+            success:function(data){
+                $("#forms").html(data);
+
+            }
+        });
+      
+    }
+</script>
