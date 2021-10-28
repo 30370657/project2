@@ -1,5 +1,5 @@
 <?php 
-    include("../management/config.php");
+    include("../../management/config.php");
 
     $k = $_GET['key'];
     $sql = "Select * from course where ID = $k limit 1";
@@ -28,10 +28,10 @@
 <input type="text" name="Cost" value='<?php echo $res['Cost']?>'>
 <label for="College ID">College ID</label>
 <select name="CollegeID" >
-    <option value='<?php echo $res['ID']?>' selected=True><?php echo $res['Name']?> (Current College)</option>
+    
     <?php 
         foreach($collegeData as $data){ var_dump($data)?>
-            <option value='<?php echo $data['ID']?>'><?php echo $data['Name']?> </option> 
+            <option value='<?php echo $data['ID']?>' <?php if($data['ID']==$res['College ID']){echo "selected";}?>><?php echo $data['Name']; if($data['ID']==$res['College ID']){echo "(Current College)";}?> </option> 
         <?php } ?>
 
     

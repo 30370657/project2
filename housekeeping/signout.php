@@ -1,7 +1,7 @@
 <?php 
 session_start();
-include("config.php");
-include("function.php");
+include("../management/config.php");
+include("../management/function.php");
 session_destroy();
 header("Location: ../login.php");
 

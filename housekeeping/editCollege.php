@@ -1,4 +1,5 @@
 <?php
+ob_start();
 
 use FFI\CData;
 
@@ -21,61 +22,124 @@ $courseData = mysqli_query($con,$courseSql);
 
 
 
-if(isset($_POST['signout'])){
-    session_destroy();
-    header("Location: #");
-}
+
+include("models/base.php")
+
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style/css/bootstrap.css">
-    <link rel="stylesheet" href="../style/css/style.css">
-    
-    <title>Housekeeping</title>
-    
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-</head>
-<body>
-<header>
-        <img src="../media/image/logo.jpg" alt="Logo" class="logo">
-        <div class="moto">
-            <h3>CareerGro Australia</h3> <br>
-            <h4> 
-                Plan For Better Future <br> 
-                Educational Consultants
-            </h4>
-        </div>
 
-        <nav>
-            <a href="../index.php">Home</a>
-            <a href="../about.php">About Us</a>
-            <a href="../ae.php">Educational Agents</a>
-            <a href="../ea.php">Australian Education</a>
-            <a href="../contact.php">Contact</a>
+<?php 
+    if(isset($_POST)){
+       
+
+        if(isset($_POST['Add'])){
+            $colName= $_POST['colName'];
+            $abn =  $_POST['abn'];
+            $id = $_POST['selected'];
+            $location = $_POST['location'];
+            $link = $_POST['link'];
+            $cidentifier = $_POST['cidentifier'];
+        
+            try {
+                
+               
+                $sql="INSERT INTO `college`( `Name`, `ABN`, `Location`, `link`, `CIdentifier`) VALUES ('$colName', '$abn',' $location', '$link', '$cidentifier')";
+                
+               if(mysqli_query($con,$sql)){
+                   
+                   refresh();
+                   
+               }
+                
+            } catch (Exception $th) {
+                print"<script>alert('hi')";
+                echo $e->getMessage();
+            }
             
-            <a class="active" href="signout.php" style="float:right">Sign Out </a>
-        </nav>
+        }elseif(isset($_POST['Update'])){
+            $colName= $_POST['colName'];
+            $abn =  $_POST['abn'];
+            $id = $_POST['selected'];
+            $location = $_POST['location'];
+            $link = $_POST['link'];
+            $cidentifier = $_POST['cidentifier'];
+            $sql="Update `college` set `Name` = '$colName', `ABN`= '$abn' , `Location`= ' $location', `link`= '$link', `CIdentifier`='$cidentifier' where `ID` = '$id' ";
+            if(mysqli_query($con, $sql)){
+                
+                refresh();
+               
+
+            }
+           
+                
+        }elseif(isset($_POST['Delete'])){
+            try{
+                
+                $ID = $_POST['selected'];
+                $sql="Delete FROM college where ID = $ID";
+                if(mysqli_query($con, $sql)){
+                
+                    
+                    refresh();
+                    
+                }
+            }catch (Exception $th) {
+                print"<script>alert('". $th->getMessage()."')";
+            }
+        }
+
+    }
 
 
-    </header>
-    <div class="vnav">
-        <div class="nav-item">
-            
-            <a href="editCollege.php">College Editor</a><br>
-            <a href="editCourse.php">Course Info </a><br>
-            <a href="editUser.php">Settings</a><br>
-        </div>
-    </div>
+    function refresh(){
     
-    <div class="createData">
+        header("Refresh:0");
+        ob_end_flush();
+    }
+    
+
+
+?>
+
+
+<script>
+    function checkCollege(ind){
+        var p = ind
+
+        if (p == 0) {
+            $("#btn").val("Add");
+            
+        }
+        
+        $.ajax({
+            
+            url:'apis/getCollege.php',
+            method:'POST',
+            data:{'key' : p },
+            success:function(data){
+                $("#forms").html(data);
+                if (p != 0){
+                    $("#btn").val("Update");
+                    $("#btn").attr('name','Update');
+                }else{
+                    $("#btn").val("Add");
+                    $("#btn").attr('name','Add')
+                }
+                
+               
+
+            }
+        });
+      
+    }
+</script>
+
+
+<div class="createData">
         <h2>College Data</h2>
         <form action="" method="post">
 
             <select name="selected" id="dropDownSelect" onchange="checkCollege(this.value)">
+                
                 <option value="0">New</option>
                 <?php 
                     foreach($collegeData as $cData){
@@ -121,94 +185,3 @@ if(isset($_POST['signout'])){
     
 </body>
 </html>
-
-<?php 
-    if(isset($_POST)){
-       
-
-        if(isset($_POST['Add'])){
-            $colName= $_POST['colName'];
-            $abn =  $_POST['abn'];
-            $id = $_POST['selected'];
-            $location = $_POST['location'];
-            $link = $_POST['link'];
-            $cidentifier = $_POST['cidentifier'];
-        
-            try {
-                
-               
-                $sql="INSERT INTO `college`( `Name`, `ABN`, `Location`, `link`, `CIdentifier`) VALUES ('$colName', '$abn',' $location', '$link', '$cidentifier')";
-                
-               if(mysqli_query($con,$sql)){
-                   echo "<script>alert('success')</script>";
-                   header("Refresh:0");
-               }
-                
-            } catch (Exception $th) {
-                print"<script>alert('hi')";
-                echo $e->getMessage();
-            }
-            
-        }elseif(isset($_POST['Update'])){
-            $colName= $_POST['colName'];
-            $abn =  $_POST['abn'];
-            $id = $_POST['selected'];
-            $location = $_POST['location'];
-            $link = $_POST['link'];
-            $cidentifier = $_POST['cidentifier'];
-            $sql="Update `college` set `Name` = '$colName', `ABN`= '$abn' , `Location`= ' $location', `link`= '$link', `CIdentifier`='$cidentifier' where `ID` = '$id' ";
-            if(mysqli_query($con, $sql)){
-                print"<script>alert('Success')</script>";
-                header("Refresh:0");
-
-            }
-           
-                
-        }elseif(isset($_POST['Delete'])){
-            $ID = $_POST['selected'];
-            $sql="Delete FROM College where ID = $ID";
-            if(mysqli_query($con, $sql)){
-               
-                print"<script>alert('Successfully Deleted')</script>";
-                header("Refresh:0");
-            }
-        }
-
-    }
-    
-
-
-?>
-
-
-<script>
-    function checkCollege(ind){
-        var p = ind
-
-        if (p == 0) {
-            $("#btn").val("Add");
-            
-        }
-        
-        $.ajax({
-            
-            url:'getCollege.php',
-            method:'POST',
-            data:{'key' : p },
-            success:function(data){
-                $("#forms").html(data);
-                if (p != 0){
-                    $("#btn").val("Update");
-                    $("#btn").attr('name','Update');
-                }else{
-                    $("#btn").val("Add");
-                    $("#btn").attr('name','Add')
-                }
-                
-               
-
-            }
-        });
-      
-    }
-</script>

@@ -1,5 +1,5 @@
 <?php 
-    include("../management/config.php");
+    include("../../management/config.php");
     $k = $_GET['key'];
     $sql = "Select * from college where ID = $k limit 1";
     $res = mysqli_fetch_assoc(mysqli_query($con,$sql));

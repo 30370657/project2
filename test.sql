@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 08, 2021 at 02:57 PM
+-- Generation Time: Oct 08, 2021 at 07:14 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.8
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `test`
 --
+CREATE DATABASE IF NOT EXISTS `test` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `test`;
 
 -- --------------------------------------------------------
 
@@ -27,6 +29,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `college`
 --
 
+DROP TABLE IF EXISTS `college`;
 CREATE TABLE `college` (
   `ID` int(11) NOT NULL,
   `Name` varchar(255) NOT NULL,
@@ -41,11 +44,8 @@ CREATE TABLE `college` (
 --
 
 INSERT INTO `college` (`ID`, `Name`, `ABN`, `Location`, `link`, `CIdentifier`) VALUES
-(7, 'Test 1', 0, 'terst', '', 'COl'),
-(8, 'Test3', 123, 'Test', 'TEst', 'Tes3'),
-(9, 'Test 2', 123, ' ', '', ''),
-(10, ' ADS', 0, '  asdf', ' asdf', ' asdf'),
-(11, 'asdf', 0, ' sdf', 'sdf', 'asdfsdf');
+(7, 'MIT Sydney', 123456, '  Sydney test', '', 'COl'),
+(14, 'MIT Melbourne', 123456, ' Melbourne', '', 'MITMel');
 
 -- --------------------------------------------------------
 
@@ -53,6 +53,7 @@ INSERT INTO `college` (`ID`, `Name`, `ABN`, `Location`, `link`, `CIdentifier`) V
 -- Table structure for table `course`
 --
 
+DROP TABLE IF EXISTS `course`;
 CREATE TABLE `course` (
   `ID` int(11) NOT NULL,
   `Name` varchar(255) NOT NULL,
@@ -66,8 +67,9 @@ CREATE TABLE `course` (
 --
 
 INSERT INTO `course` (`ID`, `Name`, `Desc`, `Cost`, `College ID`) VALUES
-(9, 'CTest1', 'CTest1', 0, 7),
-(10, 'NewCourse', 'Test', 1500, 7);
+(24, 'Test', 'Tese', 0, 7),
+(26, ' New Course', ' ', 0, 7),
+(30, ' NEwer', 'Mel', 0, 14);
 
 -- --------------------------------------------------------
 
@@ -75,6 +77,7 @@ INSERT INTO `course` (`ID`, `Name`, `Desc`, `Cost`, `College ID`) VALUES
 -- Table structure for table `team`
 --
 
+DROP TABLE IF EXISTS `team`;
 CREATE TABLE `team` (
   `id` int(11) NOT NULL,
   `Name` varchar(255) NOT NULL,
@@ -91,6 +94,7 @@ CREATE TABLE `team` (
 -- Table structure for table `user`
 --
 
+DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
@@ -103,7 +107,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `last_login`) VALUES
-(1, 'sangit', '$2y$10$k2KITyUH1dYdAlZ7/4x1TO.0V18G3m0yL0s18NXjdqcvKw4wijECq', '2021-08-03 12:18:05');
+(9, 'Test', '$2y$10$GazIaAWqJqujRtA3NS9mOuGWTJzx7k4FIqAmXSQb9vGOo3b6k6vAO', '2021-10-08 15:50:29'),
+(10, 'sangit', '$2y$10$khlORSV4Hko09jR0xHhJ2uXo9zubEXRDQqz658.1kAAynxdUwn2NS', '2021-10-08 17:13:21');
 
 --
 -- Indexes for dumped tables
@@ -142,13 +147,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `college`
 --
 ALTER TABLE `college`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `course`
 --
 ALTER TABLE `course`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `team`
@@ -160,7 +165,7 @@ ALTER TABLE `team`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables
